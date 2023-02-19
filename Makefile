@@ -13,7 +13,7 @@ build/%.rel: src/%.c $(HEADERS)
 postcode.hex: $(OBJECTS)
 	$(SDCC) -o build/$@ $(SDCCOPTS) $^
 	cp build/$@ .
-	gawk -f lastadr.awk $@
+	awk -f lastadr.awk $@
 
 clean:
 	rm -f *.hex
